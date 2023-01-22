@@ -9,8 +9,11 @@ class AddNoteCubit extends Cubit<AddNotesState>
 {
   AddNoteCubit() : super(AddNoteInitial());
 
+  Color color = const Color(0xfff7c1bb);
+
   addNote(NoteModel note) async
   {
+    note.color = color.value;
     emit(AddNoteLoading());
 
     try
